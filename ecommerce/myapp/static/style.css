@@ -1,0 +1,196 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color : #f1f1f1; 
+    box-sizing: border-box;
+    background-image: url('https://img.freepik.com/free-photo/paper-background_53876-147734.jpg?t=st=1718688071~exp=1718691671~hmac=b2b78609a88ea78b4b6b01c5ad2b17eafcb547955f9343eb3a0244a61aba8d45&w=996');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* <!--Main Section--> */
+.electronics-gadgets {
+    text-align: center;
+    padding: 1px;
+}
+
+.gadgets-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+}
+
+.gadget-item {
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.gadget-item img {
+    width: 80%;
+    height: auto;
+    max-width: 150px;
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.gadget-item a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.gadget-item p {
+    margin: 10px 0 5px;
+    font-size: 14px;
+}
+
+.gadget-item :hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.fashion {
+    text-align: center;
+    padding: 25px;
+}
+
+.fashion-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+}
+
+.fashion-item {
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.fashion-item img {
+    width: 80%;
+    height: auto;
+    max-width: 150px;
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.fashion-item a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.fashion-item p {
+    margin: 10px 0 5px;
+    font-size: 14px;
+}
+
+.fashion-item :hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.home-appliances {
+    text-align: center;
+    padding: 25px;
+}
+
+.home-appliances-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+}
+
+.home-appliance-item {
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.home-appliance-item img {
+    width: 80%;
+    height: auto;
+    max-width: 150px;
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.home-appliance-item a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.home-appliance-item p {
+    margin: 10px 0 5px;
+    font-size: 14px;
+}
+
+.home-appliance-item :hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.grocery {
+    text-align: center;
+    padding: 25px;
+}
+
+.grocery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+}
+
+.grocery-item {
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.grocery-item img {
+    width: 80%;
+    height: auto;
+    max-width: 150px;
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.grocery-item a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.grocery-item p {
+    margin: 10px 0 5px;
+    font-size: 14px;
+}
+
+.grocery-item :hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* <!--Main Section End--> */

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EDIT PROFILE</title>
+    <link rel="stylesheet" href="{% static "edit_profile.css" %}">
+</head>
+<body>
+  <div class="main">
+    <h1>Edit Profile</h1>
+    <form method="post" action="" enctype='multipart/form-data'>
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ user.name }}" required>
+
+        <label for="mobile">Mobile No. </label>
+        <input type="text" name="mobile" value="{{ user.mobile }}">
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" value="{{ user.address }}" required>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" value="{{ user.city }}" required>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" value="{{ user.state }}" required>
+
+        <label for="image">Profile Picture:</label>
+        <input type="file" id="profile_image" name="profile_image" accept="image/*">
+
+        <div class="button-container">
+        <a href="{% url 'user_profile' %}" class="back-button">Back</a>
+        <button type="submit">Save</button>
+        </div>
+    </form>
+  </div>
+</body>
+</html>

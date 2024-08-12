@@ -1,0 +1,276 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftDeal</title>
+    <style>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #FAD4D4;
+            padding: 20px 20px;
+            color: #fff;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .img img {
+            margin-left: 60px;
+            height: auto;
+            {% comment %} width: auto; {% endcomment %}
+            max-height: 50px; /* This will ensure the navbar height remains the same */
+            width: 80px;  /* This will ensure the navbar height remains the same */
+            transform: scale(2); /* Adjust the scale as needed */
+            transform-origin: center; /* Keeps the image centered */
+        }
+
+        .img a{
+            text-decoration: none;
+            color: #ff5e00;
+        }
+
+        .img h1 {
+            list-style: none;
+            margin-left: 135px;
+            margin-top: -35px;
+            font-size: 25px;
+            font-family:'Courier New', Courier, monospace;
+            color: #ff5e00;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar {
+            margin-right: 330px;
+        }
+
+        .search-bar form {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .search-bar input[type="text"] {
+            flex-grow: 4;
+            width: 100%;
+            padding: 10px 250px;
+            border-radius: 5px;
+            margin-right: 20px;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            background-color: #a78f8f;
+            color: #000000;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .search-bar button:hover {
+            background-color: #d1b2b2;
+        }
+
+        .login-button {
+            position: relative;
+            margin-right: 115px;
+            color: #000000;
+            list-style: none;
+            box-sizing: border-box;
+            font-size: 20px;
+            padding: 10px 20px;
+            border-radius: 3px;
+            background-color: #FAD4D4;
+            font-weight: bold;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana;
+        }
+
+        .login-button li {
+            list-style: none;
+        }
+
+        .login-button a {
+            text-decoration: none;
+            color: #000000;
+            background-color: #FAD4D4;
+            padding: 10px 20px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .login-button a:hover {
+            background-color: #777;
+        }
+
+        .login_name {
+            margin-right: 25px;
+            color: #000000;
+            list-style: none;
+            box-sizing: border-box;
+            font-size: 20px;
+            padding: 10px 20px;
+            border-radius: 3px;
+            background-color: #FAD4D4;
+            font-weight: bold;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .login_name {
+            position: relative;
+            margin-right: 15px;
+            border-radius: 4px;
+            right: 105px;
+        }
+
+        .login_name:hover {
+            background-color: #777;
+        }
+
+        .login_name a {
+            text-decoration: none;
+            color: #fff;
+            transition: background-color 0.3s;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .login_name a:hover {
+            background-color: #777;
+        }
+
+        .cart-button {
+            position: absolute;
+            right: 170px;
+        }
+
+        .cart-button li {
+            list-style: none;
+        }
+
+        .cart-button a {
+            text-decoration: none;
+            color: #000000;
+            background-color: #FAD4D4;
+            padding: 10px 20px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            font-size: 20px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .cart-button a:hover {
+            background-color: #777;
+        }
+
+        .prem-btn{
+            background: transparent;
+            border: none;
+            padding: 10px 20px;
+        }
+
+        .prem-btn a{
+            text-decoration: none;
+            color: #000;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            font-size: 20px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .prem-btn:hover{
+            background-color: #777;
+        }
+
+        .dropbtn {
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: calc(100% + 1px);
+            background-color: #777;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #777;
+        }
+
+        .login_name:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav>
+        <div class="img">
+            <a href="{% url 'index' %}">
+                <img src="{% static 'images\logo.png' %}" alt="logo" >
+                {% comment %} <h1>SwiftDeal</h1> {% endcomment %}
+            </a>
+        </div>
+        <div class="navbar">
+            <div class="search-bar">
+                <form method="GET" action="{% url 'search_results' %}">
+                    {% csrf_token %}
+                    <input type="text" name="query" placeholder="🔍Search for Products...">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            {% if request.user.is_authenticated %}
+                <div class="login_name dropdown">
+                    <span class="dropbtn">{{ request.user.username }}▼</span>
+                    <div class="dropdown-content">
+                        <a href="{% url 'user_profile' %}">My Profile</a>
+                        <a href="{% url 'orders' %}">My Orders</a>
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="login-button">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                    </form>
+                </div>
+            {% endif %}
+            <div class="cart-button">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <li><a href="{% url 'cart' %}">Cart</a></li>
+                </form>
+            </div>
+            <div class="premium-button">
+                <button class="prem-btn"><a href="{% url 'premium' %}">Premium</a></button>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar Section End -->
+</body>
+</html>

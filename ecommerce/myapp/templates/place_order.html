@@ -1,0 +1,55 @@
+<!-- templates/place_order.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout - Place Order</title>
+    <link rel="stylesheet" href="{% static 'place_order.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container">
+    <h2>Checkout</h2>
+    <div class="user-info">
+        <p><strong>Name :</strong> {{ user.name }}</p>
+        <p><strong>Shipping Address:</strong> {{ user.address }}, {{ user.city }}, {{ user.state }}</p>
+        <p><strong>Phone Number:</strong> {{ user.mobile }}</p>
+        <a href="{% url 'edit_profile' %}">Edit details</a>
+    </div>
+    
+    <h3>Order Summary</h3>
+    <ul>
+        {% for item in cart_items %}
+        <li class="order-item">
+            <img src="{{ item.image_url.url }}" alt="{{ item.name }}">
+            <div class="order-item-details">
+                <h3>{{ item.name }}</h3>
+                <p>{{ item.description }}</p>
+                <p><strong>Price: ${{ item.price }}</strong></p>
+                <form action="{% url 'remove_from_order' item.id %}" method="post" class="remove-form">
+                {% csrf_token %}
+                <button type="submit" class="remove-button">Remove</button>
+                </form>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    
+    <div class="pricing">
+        <h3>Order Total</h3>
+        <p><span>Subtotal:</span> <span>${{ total_price|floatformat:2 }}</span></p>
+        {% if discount > 0 %}
+            <p><span>Discount:</span> <span>${{ discount|floatformat:2 }}</span></p>
+        {% endif %}
+        <p><span>Delivery Charge:</span> <span>${{ delivery_charge|floatformat:2 }}</span></p>
+        <p class="total"><span>Total Amount:</span> <span>${{ final_price|floatformat:2 }}</span></p>
+    </div>
+    </div>
+    
+    <form method="post" class="place-order-btn">
+        {% csrf_token %}
+        <button type="submit">Place your Order</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
+
+    <title>About Us - SwiftDeal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            {% comment %} line-height: 1.6; {% endcomment %}
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .team-member img {
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .contact-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="container">
+        <h1>About Us</h1>
+        <p>Welcome to SwiftDeal!</p>
+        <p>At SwiftDeal, we're passionate about bringing you the best products at unbeatable prices. Our journey began with a simple idea: to create a shopping experience that is both enjoyable and convenient. We strive to provide our customers with a wide range of high-quality products, from the latest gadgets to everyday essentials, all in one place.</p>
+        
+        <h2>Our Mission</h2>
+        <p>Our mission is to make online shopping easy, fast, and secure. We are committed to delivering exceptional customer service and ensuring that our customers are satisfied with every purchase. We believe in building lasting relationships with our customers by offering:</p>
+        <ul>
+            <li>A diverse selection of products</li>
+            <li>Competitive prices</li>
+            <li>Fast and reliable shipping</li>
+            <li>Easy returns and exchanges</li>
+            <li>Outstanding customer support</li>
+        </ul>
+
+        <h2>Our Values</h2>
+        <h3>Customer Satisfaction</h3>
+        <p>Your satisfaction is our top priority. We are dedicated to providing you with the best shopping experience possible.</p>
+        <h3>Quality Products</h3>
+        <p>We carefully select and source products to ensure they meet our high standards of quality and performance.</p>
+        <h3>Innovation</h3>
+        <p>We are always looking for new ways to improve our services and product offerings, staying ahead of the latest trends and technologies.</p>
+        <h3>Integrity</h3>
+        <p>We believe in transparency and honesty in all our dealings, ensuring that you can trust us with your purchases.</p>
+
+        <h2>Meet Our Team</h2>
+        <div class="team-member">
+            <img src="{% static 'images/profile.jpg' %}" alt="profile" width="100" height="100">
+            <div>
+                <h3>Tarun Gyanani</h3>
+                <p>Co-founder</p>
+            </div>
+        </div>
+        <!-- Add more team members as needed -->
+
+        <h2>Contact Us</h2>
+        <p>We love hearing from our customers! If you have any questions, comments, or feedback, please don't hesitate to reach out to us:</p>
+        <div class="contact-info">
+            <p><strong>Email:</strong> todobot80@gmail.com</p>
+            <p><strong>Phone:</strong> +91 6378381443</p>
+        </div>
+        
+        <p>Thank you for choosing SwiftDeal. We look forward to serving you and helping you find exactly what you need!</p>
+        <p>Happy shopping!</p>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Policy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            {% comment %} line-height: 1.6; {% endcomment %}
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+{% include 'navbar.html' %}
+
+<div class="container">
+    <h1>Shipping</h1>
+
+    <h2>Order Processing</h2>
+    <p>All orders are processed within 1-2 business days. Orders are not shipped or delivered on weekends or holidays.</p>
+
+    <h2>Shipping Rates & Delivery Estimates</h2>
+    <p>Shipping charges for your order will be calculated and displayed at checkout.</p>
+    <p>Delivery estimates depend on your location and the shipping method chosen:</p>
+    <ul>
+        <li><strong>Standard Shipping:</strong> 3-5 business days</li>
+        <li><strong>Expedited Shipping:</strong> 2-3 business days</li>
+        <li><strong>Overnight Shipping:</strong> 1-2 business days</li>
+    </ul>
+
+    <h2>Shipment Confirmation & Order Tracking</h2>
+    <p>You will receive a Shipment Confirmation email once your order has shipped containing your tracking number(s). The tracking number will be active within 24 hours.</p>
+
+    <h2>Customs, Duties, and Taxes</h2>
+    <p>Our ecommerce website is not responsible for any customs and taxes applied to your order. All fees imposed during or after shipping are the responsibility of the customer (tariffs, taxes, etc.).</p>
+
+    <h2>Damages</h2>
+    <p>If you received your order damaged, please contact us immediately for assistance. We will help you file a claim with the shipping carrier to resolve the issue.</p>
+
+    <h2>International Shipping Policy</h2>
+    <p>We currently do not ship outside the India.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions about our Shipping Policy, please contact us at:</p>
+    <div class="contact-info">
+        <p><strong>Email:</strong> todobot80@gmail.com</p>
+        <p><strong>Phone:</strong> +91 6378381443</p>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+</body>
+</html>

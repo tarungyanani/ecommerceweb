@@ -1,0 +1,72 @@
+<!-- templates/search_results.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .search_container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            padding: 20px;
+        }
+
+        .search_item {
+            width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            background-color: #fff;
+            transition: transform 0.2s;
+        }
+
+        .search_item:hover {
+            transform: scale(1.05);
+        }
+
+        .search_item img {
+            width: 80%;
+            height: auto;
+            max-width: 150px;
+            max-height: 200px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+        .search_item p {
+            margin: 10px 0 5px;
+            font-size: 14px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <h2>Search Results for "{{ query }}"</h2>
+    <div class="search_container">
+        {% for product in results %}
+        <a href="{% url 'product_detail' product.id %}" class="search_item">
+            <img src="{{ product.image_url.url }}" alt="{{ product.name }}">
+            <p>{{ product.name }}</p>
+            <p>Price: ${{ product.price }}</p>
+        </a>
+        {% empty %}
+        <p>No products found matching your query.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

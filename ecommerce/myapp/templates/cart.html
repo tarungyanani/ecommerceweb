@@ -1,0 +1,59 @@
+<!-- templates/cart.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart</title>
+    <link rel="stylesheet" href="{% static 'cart.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+
+    {% comment %} <h1>Cart Section</h1> {% endcomment %}
+    <div class="cart-container">
+      <div class="cart-items">
+        {% for item in cart_items %}
+          <div class="cart-item">
+            <div class="item-image">
+              <img src="{{ item.image_url.url }}" alt="{{ item.name }}">
+            </div>
+            <div class="item-details">
+              <h2>{{ item.name }}</h2>
+              <p>{{ item.description }}</p>
+              <div class="item-price">
+                Price: ${{ item.price }}
+              </div>
+              <form action="{% url 'remove_from_cart' item.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="remove-button">Remove</button>
+              </form>
+            </div>
+          </div>
+        {% empty %}
+          <p>Your cart is empty.</p>
+        {% endfor %}
+      </div>
+      <div class="price-details">
+        <h2>Price Details</h2>
+        <p>Price : ${{ total_price|floatformat:2 }}</p>
+        {% if discount > 0 %}
+          <p>Discount : -${{ discount|floatformat:2 }}</p>
+        {% endif %}
+        <p>Delivery Charge : ${{ delivery_charge|floatformat:2 }}</p>
+        <p>Total amount : ${{ final_price|floatformat:2 }}</p>
+        <p style="font-size: 14px; color: red; font-weight: bold; text-align: center; background-color: #f0f0f0; padding: 10px; border: 1px solid black;">
+        Order above $1000 to get free delivery and extra 20% off
+        </p>
+        {% if cart_items %}
+          <div class="place-order">
+            <form action="{% url 'place_order' %}" method="post">
+              {% csrf_token %}
+              <button type="submit">Place Order</button>
+            </form>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

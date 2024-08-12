@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Policy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            {% comment %} line-height: 1.6; {% endcomment %}
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .contact-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+{% include 'navbar.html' %}
+
+<div class="container">
+    <h1>Payment Policy</h1>
+
+    <h2>Accepted Payment Methods</h2>
+    <p>We accept the following payment methods:</p>
+    <ul>
+        <li>Credit/Debit Cards: Visa, MasterCard, American Express, Discover</li>
+        <li>PayPal</li>
+        <li>Bank Transfers</li>
+        <li>Other payment methods as may be offered at checkout</li>
+    </ul>
+
+    <h2>Payment Processing</h2>
+    <p>All payments are processed securely using SSL encryption to ensure that your information is protected. We do not store your payment information on our servers.</p>
+    
+    <h2>Payment Confirmation</h2>
+    <p>After placing an order, you will receive a payment confirmation email detailing the transaction. This email will serve as your receipt.</p>
+
+    <h2>Billing</h2>
+    <p>Your credit/debit card will be charged when your order is processed. If your card is declined, your order will not be processed and you will be notified to provide an alternative payment method.</p>
+
+    <h2>Currency</h2>
+    <p>All prices listed on our website are in dollars unless otherwise stated.</p>
+
+    <h2>Taxes</h2>
+    <p>All applicable taxes will be calculated and displayed at checkout.</p>
+
+    <h2>Failed Transactions</h2>
+    <p>If your payment fails, please try an alternative payment method or contact your bank for further assistance. You can also reach out to our customer support for help.</p>
+
+    <h2>Refunds</h2>
+    <p>For information on refunds, please refer to our <a href="{% url 'return_policy' %}">Return Policy</a> page.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions about our Payment Policy, please contact us at:</p>
+    <div class="contact-info">
+        <p><strong>Email:</strong> todobot80@gmail.com</p>
+        <p><strong>Phone:</strong> +91 6378381443</p>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+</body>
+</html>

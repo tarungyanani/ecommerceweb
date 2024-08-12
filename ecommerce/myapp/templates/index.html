@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <!--Navbar-->
+    {% include 'navbar.html' %}
+    <!--Navbar End-->
+
+    <!--Main Section-->
+    <!--Electronics gadgets Section-->
+    <section class="electronics-gadgets">
+        <h2>Deals on Smartphones</h2>
+        <div class="gadgets-container">
+            <div class="gadget-item">
+                <a href="{% url 'product_detail' product_id=1 %}">
+                    <img src="{% static 'images/smartphone/iphone.jpg' %}" alt="iphone15">
+                    <p>Apple iPhone 15</p>
+                    <p>Price: $699</p>
+                </a>
+            </div>
+            <div class="gadget-item">
+                <a href="{% url 'product_detail' product_id=2 %}">
+                    <img src="{% static 'images/smartphone/samsung.jpg' %}" alt="samsungs23">
+                    <p>Samsung S23</p>
+                    <p>Price: $799</p>
+                </a>
+            </div>
+            <div class="gadget-item">
+                <a href="{% url 'product_detail' product_id=3 %}">
+                    <img src="{% static 'images/smartphone/realme.jpg' %}" alt="realmep1">
+                    <p>Realme P1 5G</p>
+                    <p>Price: $192</p>
+                </a>
+            </div>
+            <div class="gadget-item">
+                <a href="{% url 'product_detail' product_id=4 %}">
+                    <img src="{% static 'images/smartphone/pixel.jpg' %}" alt="pixel8">
+                    <p>Pixel 8</p>
+                    <p>Price: $423</p>
+                </a>
+            </div>
+            <div class="gadget-item">
+                <a href="{% url 'product_detail' product_id=5 %}">
+                    <img src="{% static 'images/smartphone/mi.jpeg' %}" alt="mi11ultra">
+                    <p>Mi 11 Ultra</p>
+                    <p>Price: $840</p>
+                </a>
+            </div>
+            <div class="gadget-item">
+                <a href="{% url 'product_detail' product_id=6 %}">
+                    <img src="{% static 'images/smartphone/ipad.jpg' %}" alt="ipadpro">
+                    <p>Apple iPad Pro </p>
+                    <p>Price: $899</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="fashion">
+        <h2>Top Deals on Men's Footwear</h2>
+        <div class="fashion-container">
+            <div class="fashion-item">
+                <a href="{% url 'product_detail' product_id=7 %}">
+                    <img src="{% static 'images/fashion/redtape.jpg' %}" alt="redtape">
+                    <p>Red Tape Casual Sneaker Shoes</p>
+                    <p>Price: $21.20</p>
+                </a>
+            </div>
+            <div class="fashion-item">
+                <a href="{% url 'product_detail' product_id=8 %}">
+                    <img src="{% static 'images/fashion/sparx.jpg' %}" alt="sparx">
+                    <p>SPARX Mens SM 9039</p>
+                    <p>Price: $7.18</p>
+                </a>
+            </div>
+            <div class="fashion-item">
+                <a href="{% url 'product_detail' product_id=9 %}">
+                    <img src="{% static 'images/fashion/campus.jpg' %}" alt="campus">
+                    <p>Campus Men's Rebel Running Shoes</p>
+                    <p>Price: $30</p>
+                </a>
+            </div>
+            <div class="fashion-item">
+                <a href="{% url 'product_detail' product_id=10 %}">
+                    <img src="{% static 'images/fashion/reebok.jpg' %}" alt="reebok">
+                    <p>Reebok Mens Floatride Energy City Shoes</p>
+                    <p>Price: $72</p>
+                </a>
+            </div>
+            <div class="fashion-item">
+                <a href="{% url 'product_detail' product_id=11 %}">
+                    <img src="{% static 'images/fashion/asian.jpg' %}" alt="asian">
+                    <p>ASIAN Men's Everest-21 Sports Trekking & Hiking</p>
+                    <p>Price: $14.40</p>
+                </a>
+            </div>
+            <div class="fashion-item">
+                <a href="{% url 'product_detail' product_id=12 %}">
+                    <img src="{% static 'images/fashion/bacca.jpg' %}" alt="bacca">
+                    <p>Bacca Bucci SINISTER Oil Pull-Up leather combat boots</p>
+                    <p>Price: $54</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="home-appliances">
+        <h2>Home Appliances</h2>
+        <div class="home-appliances-container">
+            <div class="home-appliance-item">
+                <a href="{% url 'product_detail' product_id=13 %}">
+                    <img src="{% static 'images/home-appliances/whirlpool.jpg' %}" alt="whirlpool">
+                    <p>Whirlpool 190 L 3 Star Direct-Cool Single Door Refrigerator</p>
+                    <p>Price: $199</p>
+                </a>
+            </div>
+            <div class="home-appliance-item">
+                <a href="{% url 'product_detail' product_id=14 %}">
+                    <img src="{% static 'images/home-appliances/samsungg.jpg' %}" alt="samsungg">
+                    <p>Samsung 6.5 kg Fully-Automatic Top Loading Washing Machine</p>
+                    <p>Price: $299</p>
+                </a>
+            </div>
+            <div class="home-appliance-item">
+                <a href="{% url 'product_detail' product_id=15 %}">
+                    <img src="{% static 'images/home-appliances/philips.jpg' %}" alt="philips">
+                    <p>Philips HL7756/00 Mixer Grinder, 750W, 3 Jars</p>
+                    <p>Price: $89</p>
+                </a>
+            </div>
+            <div class="home-appliance-item">
+                <a href="{% url 'product_detail' product_id=16 %}">
+                    <img src="{% static 'images/home-appliances/sony.jpg' %}" alt="sony">
+                    <p>Sony Bravia 80 cm (32 inches) HD Ready Smart LED TV</p>
+                    <p>Price: $199</p>
+                </a>
+            </div>
+            <div class="home-appliance-item">
+                <a href="{% url 'product_detail' product_id=17 %}">
+                    <img src="{% static 'images/home-appliances/whirlpool-ac.jpg' %}" alt="whirlpool-ac">
+                    <p>Whirlpool 1.5 Ton 3 Star Inverter Split AC</p>
+                    <p>Price: $399</p>
+                </a>
+            </div>
+            <div class="home-appliance-item">
+                <a href="{% url 'product_detail' product_id=18 %}">
+                    <img src="{% static 'images/home-appliances/philips-iron.jpg' %}" alt="philips-iron">
+                    <p>Philips GC1905 1440-Watt Steam Iron with Spray</p>
+                    <p>Price: $19</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="grocery">
+        <h2>Grocery</h2>
+        <div class="grocery-container">
+            <div class="grocery-item">
+                <a href="{% url 'product_detail' product_id=19 %}">
+                    <img src="{% static 'images/grocery/atta.jpg' %}" alt="atta">
+                    <p>Aashirvaad Superior MP Atta, 5kg</p>
+                    <p>Price: $9.99</p>
+                </a>
+            </div>
+            <div class="grocery-item">
+                <a href="{% url 'product_detail' product_id=20 %}">
+                    <img src="{% static 'images/grocery/dal.jpg' %}" alt="dal">
+                    <p>Daawat Rozana Super Basmati Rice, 5kg</p>
+                    <p>Price: $11.99</p>
+                </a>
+            </div>
+            <div class="grocery-item">
+                <a href="{% url 'product_detail' product_id=21 %}">
+                    <img src="{% static 'images/grocery/oil.jpg' %}" alt="oil">
+                    <p>Fortune Sunlite Refined Sunflower Oil, 5L</p>
+                    <p>Price: $9.99</p>
+                </a>
+            </div>
+            <div class="grocery-item">
+                <a href="{% url 'product_detail' product_id=22 %}">
+                    <img src="{% static 'images/grocery/sugar.jpg' %}" alt="sugar">
+                    <p>India Gate Classic Basmati Rice, 5kg</p>
+                    <p>Price: $11.99</p>
+                </a>
+            </div>
+            <div class="grocery-item">
+                <a href="{% url 'product_detail' product_id=23 %}">
+                    <img src="{% static 'images/grocery/salt.jpg' %}" alt="salt">
+                    <p>Tata Salt, 1kg</p>
+                    <p>Price: $0.99</p>
+                </a>
+            </div>
+            <div class="grocery-item">
+                <a href="{% url 'product_detail' product_id=24 %}">
+                    <img src="{% static 'images/grocery/tea.jpg' %}" alt="tea">
+                    <p>Tata Tea Gold, 1kg</p>
+                    <p>Price: $4.99</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+
+</body>
+</html>
